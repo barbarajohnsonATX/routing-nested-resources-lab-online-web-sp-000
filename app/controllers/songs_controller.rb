@@ -14,7 +14,7 @@ class SongsController < ApplicationController
         
     #get all songs 
     else
-      @songs = Songs.all
+      @songs = Song.all
     end
     
     
