@@ -3,13 +3,12 @@ class SongsController < ApplicationController
     #get songs by artist if params[artist_id] is given
     if params[:artist_id]
       #check if artist is found
-      @artist = Artist.find(params[:artist_id])
-      
-      if Artist.find(params[:artist_id])
-        @songs = Artist.find(params[:artist_id]).songs 
+      @artist = Artist.find_by(id: params[:artist_id])
+      if @artist 
+        @songs = @artist.songs 
       else 
         flash[:alert] = "Artist not found."
-        redirect_to 'artists'
+        redirect_to artists_path
         binding.pry  
       end 
         
