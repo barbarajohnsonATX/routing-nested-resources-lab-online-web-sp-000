@@ -4,6 +4,7 @@ class SongsController < ApplicationController
     if params[:artist_id]
       #check if artist is found
       @artist = Artist.find_by(id: params[:artist_id])
+      binding.pry
       if @artist 
         @songs = @artist.songs 
       else 
