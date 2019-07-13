@@ -8,6 +8,7 @@ class SongsController < ApplicationController
       else 
         flash[:alert] = "Artist not found."
         redirect_to artists_path 
+        pry 
       end 
         
     #get all songs 
